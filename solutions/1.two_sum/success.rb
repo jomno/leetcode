@@ -7,12 +7,13 @@ def two_sum(nums, target)
   ary = []
 
   nums.each_with_index do |num, i|
-    result_index = ary.index(target - num)
-    if result_index.nil?
+    other_num = target - num
+    other_num_index = ary.index(other_num)
+    if other_num_index.nil?
       ary << num
       next
     else
-      return [i, result_index]
+      return [i, other_num_index]
     end
   end
 end
