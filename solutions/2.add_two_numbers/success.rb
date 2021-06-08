@@ -15,7 +15,7 @@ class ListNode
     temp_node = self
     i = 0
     loop do
-      result = result + (temp_node.val * (10 ** i))
+      result += (temp_node.val * (10 ** i))
       temp_node = temp_node.next
       break if temp_node.nil?
       i += 1
