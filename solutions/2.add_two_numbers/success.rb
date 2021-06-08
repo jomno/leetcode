@@ -10,7 +10,7 @@ class ListNode
     @next = _next
   end
 
-  def find_node_num
+  def to_i
     result = 0
     temp_node = self
     i = 0
@@ -41,7 +41,7 @@ end
 # @param {ListNode} l2
 # @return {ListNode}
 def add_two_numbers(l1, l2)
-  sum = l1.find_node_num + l2.find_node_num
+  sum = l1.to_i + l2.to_i
 
   return ListNode.num_to_node(sum)
 end

@@ -1,4 +1,7 @@
 # Definition for singly-linked list.
+
+# TODO: 링크드 리스트 개념 복습하기
+# 재귀 코드를 썼는데.. 0 분기 치는 부분이 마음에 들지 않는다. 좀 더 생각해봐야함.
 class ListNode
   attr_accessor :val, :next
 
@@ -7,7 +10,7 @@ class ListNode
     @next = _next
   end
 
-  def find_node_num
+  def to_i
     result = 0
     temp_node = self
     i = 0
@@ -37,9 +40,9 @@ end
 # list_node_1 = ListNode.num_to_node(1000000000000000000000000000001)
 list_node_1 = ListNode.num_to_node(243)
 list_node_2 = ListNode.num_to_node(564)
-puts list_node_1.find_node_num
-puts list_node_2.find_node_num
-sum = list_node_1.find_node_num + list_node_2.find_node_num
+puts list_node_1.to_i
+puts list_node_2.to_i
+sum = list_node_1.to_i + list_node_2.to_i
 puts sum
 sum_node = ListNode.num_to_node(sum)
-puts sum_node.find_node_num
+puts sum_node.to_i
