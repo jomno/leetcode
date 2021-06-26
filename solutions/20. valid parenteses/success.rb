@@ -28,29 +28,19 @@ def is_valid(s)
 
 	s.split("").each do |char|
 		position = check_position.call(char)
-		if store_ary.empty?
-			case position
-			when "front"
-				store_ary << char
-				target_value = pair[char]
+		case position
+		when "back"
+			if char == target_value
+				store_ary.pop
+				target_value = store_ary.empty? ? nil : pair[store_ary.last]
 			else
 				return false
 			end
+		when "front"
+			store_ary << char
+			target_value = pair[char]
 		else
-			case position
-			when "back"
-				if char == target_value
-					store_ary.pop
-					target_value = store_ary.empty? ? nil : pair[store_ary.last]
-				else
-					return false
-				end
-			when "front"
-				store_ary << char
-				target_value = pair[char]
-			else
-				return false
-			end
+			return false
 		end
 	end
 
