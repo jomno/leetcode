@@ -5,7 +5,7 @@ def is_valid(s)
   begin
     eval s
     return true
-  rescue Exception => exc
+  rescue Exception => exec
     puts exec
     return false
   end
